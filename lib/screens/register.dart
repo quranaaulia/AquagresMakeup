@@ -211,7 +211,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Join us and discover amazing beauty products',
+                        'Join us and discover amazing beauty AquagresMakeup',
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey[600],

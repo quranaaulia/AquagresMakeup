@@ -471,7 +471,7 @@ class _ProfilePageState extends State<ProfilePage> with TickerProviderStateMixin
                 ),
                 SizedBox(height: 4),
                 Text(
-                  'Discover premium beauty products',
+                  'AquagresMakeup ',
                   style: TextStyle(
                     fontSize: 12,
                     color: Color(0xFF6B7280),

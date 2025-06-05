@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:tugasakhirtpm/models/notifikasi.dart';
 
-class NotificationPage extends StatefulWidget {
-  const NotificationPage({super.key});
+class NotificationScreen extends StatefulWidget {
+  const NotificationScreen({super.key});
 
   @override
-  State<NotificationPage> createState() => _NotificationPageState();
+  State<NotificationScreen> createState() => _NotificationPageState();
 }
 
-class _NotificationPageState extends State<NotificationPage> with TickerProviderStateMixin {
+class _NotificationPageState extends State<NotificationScreen> with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
 

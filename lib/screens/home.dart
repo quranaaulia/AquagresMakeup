@@ -7,7 +7,7 @@ import 'package:tugasakhirtpm/screens/detail.dart';
 import 'package:tugasakhirtpm/screens/cart.dart';
 import 'package:tugasakhirtpm/screens/profile.dart';
 import 'package:tugasakhirtpm/screens/login.dart';
-import 'package:tugasakhirtpm/screens/notifikasiscreen.dart';
+import 'package:tugasakhirtpm/screens/notification_screen.dart';
 import 'package:tugasakhirtpm/screens/favorite.dart';
 import 'package:hive/hive.dart';
 
@@ -964,7 +964,7 @@ class _ListPageState extends State<Home> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const NotificationPage(),
+                    builder: (context) => const NotificationScreen(),
                   ),
                 );
               },

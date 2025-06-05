@@ -1,7 +1,7 @@
 import 'package:tugasakhirtpm/models/makeup.dart';
 import 'package:tugasakhirtpm/models/notifikasi.dart';
 import 'package:tugasakhirtpm/screens/home.dart';
-import 'package:tugasakhirtpm/models/helpnotifikasi.dart';
+import 'package:tugasakhirtpm/services/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -1,91 +1,45 @@
-class Makeup {
-  final String title;
-  final String description;
-  final String imagePath;
-  final String brand;
-  final String price;
-  final String category;
-  final String productType;
+import 'package:hive/hive.dart';
+part 'makeup.g.dart';
 
-  Makeup({
-    required this.title,
-    required this.description,
-    required this.imagePath,
-    required this.brand,
+@HiveType(typeId: 0)
+class CartItem extends HiveObject {
+  @HiveField(0)
+  String id;
+  @HiveField(1)
+  String name;
+  @HiveField(2)
+  String imageUrl;
+  @HiveField(3)
+  String price;
+  @HiveField(4)
+  String priceSign;
+  @HiveField(5)
+  int quantity;
+
+  CartItem({
+    required this.id,
+    required this.name,
+    required this.imageUrl,
     required this.price,
-    required this.category,
-    required this.productType,
+    required this.priceSign,
+    this.quantity = 1,
   });
 
-  factory Makeup.fromJson(Map<String, dynamic> json) {
-    return Makeup(
-      title: json['name']?.toString() ?? 'Unknown Product',
-      description: json['description']?.toString() ?? 'No description available',
-      imagePath: json['api_featured_image']?.toString() ?? 
-                 json['image_link']?.toString() ?? '',
-      brand: json['brand']?.toString() ?? 'Unknown Brand',
-      price: json['price'] != null ? '\$${json['price']}' : 'Price not available',
-      category: json['category']?.toString() ?? 'Unknown Category',
-      productType: json['product_type']?.toString() ?? 'Unknown Type',
-    );
-  }
-
-  // Method untuk convert ke JSON (opsional, untuk keperluan serialization)
-  Map<String, dynamic> toJson() {
-    return {
-      'name': title,
-      'description': description,
-      'api_featured_image': imagePath,
-      'brand': brand,
-      'price': price.replaceAll('\$', ''),
-      'category': category,
-      'product_type': productType,
-    };
-  }
-
-  // Method untuk membuat copy dengan perubahan tertentu (opsional)
-  Makeup copyWith({
-    String? title,
-    String? description,
-    String? imagePath,
-    String? brand,
+  CartItem copyWith({
+    String? id,
+    String? name,
+    String? imageUrl,
     String? price,
-    String? category,
-    String? productType,
+    String? priceSign,
+    int? quantity,
   }) {
-    return Makeup(
-      title: title ?? this.title,
-      description: description ?? this.description,
-      imagePath: imagePath ?? this.imagePath,
-      brand: brand ?? this.brand,
+    return CartItem(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      imageUrl: imageUrl ?? this.imageUrl,
       price: price ?? this.price,
-      category: category ?? this.category,
-      productType: productType ?? this.productType,
+      priceSign: priceSign ?? this.priceSign,
+      quantity: quantity ?? this.quantity,
     );
-  }
-
-  @override
-  String toString() {
-    return 'Makeup(title: $title, brand: $brand, price: $price, category: $category)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    return other is Makeup &&
-        other.title == title &&
-        other.brand == brand &&
-        other.price == price &&
-        other.category == category &&
-        other.productType == productType;
-  }
-
-  @override
-  int get hashCode {
-    return title.hashCode ^
-        brand.hashCode ^
-        price.hashCode ^
-        category.hashCode ^
-        productType.hashCode;
   }
 }
